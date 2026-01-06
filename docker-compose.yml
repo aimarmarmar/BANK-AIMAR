@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # 1. SERVICE DATABASE
+  nasabah-db:
+    image: postgres:15-alpine
+    container_name: nasabah_db_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123  # Password database di cloud
+      POSTGRES_DB: db_nasabah
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2. SERVICE APLIKASI JAVA
+  nasabah-app:
+    build: .
+    container_name: nasabah_app_container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - nasabah-db  # Tunggu DB nyala dulu
+    environment:
+      # TIMPA SETTINGAN application.properties LOKAL
+      # Perhatikan: host-nya ganti jadi 'nasabah-db' (nama service di atas)
+      SPRING_DATASOURCE_URL: jdbc:postgresql://nasabah-db:5432/db_nasabah
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+volumes:
+  postgres_data:
