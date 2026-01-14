@@ -5,18 +5,18 @@ import lombok.Getter;
 @Getter
 public enum ResponseCode {
 
-    SUCCESS("20000", "Sukses"),
+    SUCCESS("200", "Sukses"),
 
     // Validation
-    VALIDATION_ERROR("40001", "Validasi gagal"),
-    MISSING_MANDATORY_FIELD("40002", "Field wajib belum diisi"),
+    VALIDATION_ERROR("401", "Validasi gagal"),
+    MISSING_MANDATORY_FIELD("402", "Field wajib belum diisi"),
 
     // Data Logic
-    NASABAH_NOT_FOUND("40401", "Data nasabah tidak ditemukan"),
-    DUPLICATE_NIK("40901", "NIK sudah terdaftar"),
+    NASABAH_NOT_FOUND("404", "Data nasabah tidak ditemukan"),
+    DUPLICATE_NIK("409", "NIK sudah terdaftar"),
 
     // System
-    INTERNAL_SERVER_ERROR("50000", "Terjadi kesalahan internal");
+    INTERNAL_SERVER_ERROR("500", "Terjadi kesalahan internal");
 
     private final String code;
     private final String message;
