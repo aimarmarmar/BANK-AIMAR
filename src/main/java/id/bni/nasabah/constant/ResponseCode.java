@@ -8,8 +8,7 @@ public enum ResponseCode {
     SUCCESS("200", "Sukses"),
 
     // Validation
-    VALIDATION_ERROR("401", "Validasi gagal"),
-    MISSING_MANDATORY_FIELD("402", "Field wajib belum diisi"),
+    VALIDATION_ERROR("400", "Validasi gagal"),
 
     // Data Logic
     NASABAH_NOT_FOUND("404", "Data nasabah tidak ditemukan"),
