@@ -19,7 +19,7 @@ public class ApiResponse<T> {
     private LocalDateTime timestamp;
     private T data;
 
-    // Method untuk SUKSES
+    // SUCCESS Response
     public static <T> ApiResponse<T> success(ResponseCode responseCode, T data) {
         return ApiResponse.<T>builder()
                 .responseCode(responseCode.getCode())
@@ -29,7 +29,7 @@ public class ApiResponse<T> {
                 .build();
     }
 
-    // Method untuk ERROR
+    // ERROR Response
     public static <T> ApiResponse<T> error(String code, String message) {
         return ApiResponse.<T>builder()
                 .responseCode(code)

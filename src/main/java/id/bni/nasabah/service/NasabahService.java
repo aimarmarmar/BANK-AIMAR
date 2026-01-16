@@ -22,9 +22,6 @@ public class NasabahService {
 
     private final NasabahRepository nasabahRepository;
 
-    /* =========================
-       REGISTER NASABAH
-       ========================= */
     public NasabahResponseDto  registerNasabah(RegisterNasabahRequestDto requestDto
     ) {
 
@@ -112,8 +109,8 @@ public class NasabahService {
                 .current()
                 .nextInt(100000, 1000000);
 
-        return datePart + randomPart;
-    }
+            return datePart + randomPart;
+        }
 
     private NasabahResponseDto toResponseDto(NasabahModel nasabah) {
 
@@ -126,7 +123,6 @@ public class NasabahService {
                 .tanggalLahir(nasabah.getTanggalLahir())
                 .noHp(nasabah.getNoHp())
                 .email(nasabah.getEmail())
-                .createdAt(nasabah.getCreatedAt())
                 .build();
     }
 }

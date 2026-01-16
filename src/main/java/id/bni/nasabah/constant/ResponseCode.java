@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public enum ResponseCode {
 
-    SUCCESS("200", "Sukses"),
+    SUCCESS("200", "Success"),
 
     // Validation
     VALIDATION_ERROR("400", "Validasi gagal"),

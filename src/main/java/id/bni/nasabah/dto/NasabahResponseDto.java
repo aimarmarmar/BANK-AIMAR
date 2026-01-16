@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Value;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Value
 @Builder
@@ -20,5 +19,4 @@ public class NasabahResponseDto {
      LocalDate tanggalLahir;
      String noHp;
      String email;
-     LocalDateTime createdAt;
 }

@@ -45,7 +45,7 @@ public class NasabahController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public ResponseEntity<ApiResponse<Page<NasabahResponseDto>>> getAllNasabah(Pageable pageable) {
         Page<NasabahResponseDto> result = nasabahService.getAllNasabah(pageable);
 
