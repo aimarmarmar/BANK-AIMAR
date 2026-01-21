@@ -11,4 +11,6 @@ public interface NasabahRepository extends JpaRepository<NasabahModel, Long> {
 
 
 
+
+
 }

@@ -29,6 +29,12 @@ public class NasabahService {
             throw new DuplicateNikException(requestDto.getNik());
         }
 
+        int umur = java.time.Period.between(requestDto.getTanggalLahir(), LocalDate.now()).getYears();
+
+        if (umur < 17) {
+            throw new RuntimeException("Umur nasabah minimal 17 tahun!");
+        }
+
         String noCif = generateNoCif();
 
         NasabahModel nasabah = new NasabahModel();
