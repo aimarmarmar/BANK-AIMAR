@@ -22,7 +22,7 @@ public class NasabahService {
 
     private final NasabahRepository nasabahRepository;
 
-    public NasabahResponseDto  registerNasabah(RegisterNasabahRequestDto requestDto
+    public NasabahResponseDto registerNasabah(RegisterNasabahRequestDto requestDto
     ) {
 
         if (nasabahRepository.findByNik(requestDto.getNik()) != null) {

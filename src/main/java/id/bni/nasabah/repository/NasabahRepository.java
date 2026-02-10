@@ -8,9 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface NasabahRepository extends JpaRepository<NasabahModel, Long> {
 
     NasabahModel findByNik(String nik);
-
-
-
-
-
 }
