@@ -1,9 +1,8 @@
-package id.bni.nasabah.dto;
+package id.bni.nasabah.model.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDate;
 
 @Data
@@ -16,8 +15,8 @@ public class RegisterNasabahRequestDto {
     private String nik;
 
     @NotBlank(message = "Nama tidak boleh kosong")
-    @Size(min = 2, max = 60,message = "Nama harus antara 2 hingga 60 karakter")
-    @Pattern(regexp = "^[a-zA-Z\\s'.]+$",message = "Nama tidak valid")
+    @Size(min = 2, max = 60, message = "Nama harus antara 2 hingga 60 karakter")
+    @Pattern(regexp = "^[a-zA-Z\\s'.]+$", message = "Nama tidak valid")
     private String namaLengkap;
 
     @NotBlank(message = "Alamat tidak boleh kosong")
@@ -36,7 +35,7 @@ public class RegisterNasabahRequestDto {
     @Size(min = 10, max = 12)
     private String noHp;
 
-    @NotBlank(message   = "Email tidak boleh kosong")
-    @Email(message      = "Format email tidak sesuai")
+    @NotBlank(message = "Email tidak boleh kosong")
+    @Email(message = "Format email tidak sesuai")
     private String email;
 }

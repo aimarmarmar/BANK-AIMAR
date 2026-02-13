@@ -1,14 +1,12 @@
 package id.bni.nasabah.model;
 
 import id.bni.nasabah.constant.ResponseCode;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -36,6 +34,15 @@ public class ApiResponse<T> {
                 .responseMessage(message)
                 .timestamp(LocalDateTime.now())
                 .data(null)
+                .build();
+    }
+
+    public static <T> ApiResponse<T> pagination(ResponseCode responseCode, T data) {
+        return ApiResponse.<T>builder()
+                .responseCode(responseCode.getCode())
+                .responseMessage(responseCode.getMessage())
+                .timestamp(LocalDateTime.now())
+                .data(data)
                 .build();
     }
 }

@@ -1,31 +1,26 @@
-package id.bni.nasabah.model;
+package id.bni.nasabah.model.entity;
+
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-
-
 @Entity
 @Table(name = "nasabah")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class NasabahModel {
+public class Nasabah {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "nasabah_id")
-    private Long nasabahId;
-
-    @Column(name ="no_cif")
+    @Column(name = "no_cif")
     private String noCif;
 
     @Column(name = "nama_lengkap")
     private String namaLengkap;
 
+    @Id
     @Column(name = "nik")
     private String nik;
 
@@ -46,6 +41,9 @@ public class NasabahModel {
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "status")
+    private String status;
 
     @PrePersist
     protected void onCreate() {

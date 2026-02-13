@@ -7,7 +7,7 @@ public class DuplicateNikException extends BusinessException {
 
     public DuplicateNikException(String nik) {
 
-        super(ResponseCode.DUPLICATE_NIK,"Nasabah dengan NIK " + nik + " sudah terdaftar.", HttpStatus.CONFLICT);
+        super(ResponseCode.DUPLICATE_NIK, "Nasabah dengan NIK " + nik + " sudah terdaftar.", HttpStatus.CONFLICT);
 
     }
 }
