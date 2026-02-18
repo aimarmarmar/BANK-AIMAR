@@ -18,11 +18,10 @@ services:
     build: .
     container_name: nasabah_app_container
     ports:
-      - "8080:8080"
+      - "8080:9090"
     depends_on:
       - nasabah-db
     environment:
-
       SPRING_DATASOURCE_URL: jdbc:postgresql://nasabah-db:5432/db_nasabah
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password123
